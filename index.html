@@ -14,31 +14,50 @@
         <div class="user-info">
             <!-- USER INPUT SECTION -->
             <div class="user-input">
-                <label for="name">Nome e Cognome</label>
-                <input type="text" name="name" id="name" placeholder="Inserisci il tuo nome">
-                <label for="km">KM di viaggio</label>
-                <input type="number" name="km" id="km" placeholder="KM di viaggio">
-                <label for="age">Fascia d'età</label>
-                <select name="age" id="age">
-                    <option value="underage">0 - 17</option>
-                    <option value="adult">18+</option>
-                    <option value="over">65+</option>
-                </select>
+                <div class="user-name">
+                    <label for="name">Nome e Cognome</label>
+                    <input type="text" name="name" id="name" placeholder="Inserisci il tuo nome">
+                </div>
+                <div class="user-km">
+                    <label for="km">KM di viaggio</label>
+                    <input type="number" name="km" id="km" placeholder="KM di viaggio">
+                </div>
+                <div class="user-age">
+                    <label for="age">Fascia d'età</label>
+                    <select name="age" id="age">
+                        <option value="underage">0 - 17</option>
+                        <option value="adult">18+</option>
+                        <option value="over">65+</option>
+                    </select>
+                </div>
             </div>
 
             <!-- BUTTONS -->
             <div class="buttons">
-                <button id="gen-btn">Genera</button>
-                <button id="del-btn">Annulla</button>
+                <button id="gen-btn">GENERA</button>
+                <button id="del-btn">ANNULLA</button>
             </div>
         </div>
         <!-- TICKET INFO SECTION -->
+        <h1 class="your-ticket">IL TUO BIGLIETTO</h1>
         <div id="ticket-print" class="ticket-info">
-            <div id="pax-name"></div>
-            <div id="discount-info"></div>
-            <div id="carriage"></div>
-            <div id="cp-code"></div>
-            <div id="price"></div>
+            <h3>DETTAGLI PASSEGGERO</h3>
+            <hr>
+            <div class="ticket-print-info">
+                <div class="pax-name-print">
+                    <h3>Nome Passeggero</h3>
+                    <div id="pax-name"></div>
+                </div>
+                <div class="prezzo">Prezzo</div>
+                <div id="discount-info"></div>
+                <div class="carrozza">Carrozza</div>
+                <div id="carriage"></div>
+                <div class="codice-cp">Codice CP</div>
+                <div id="cp-code"></div>
+                <div class="costo-biglietto">Costo Biglietto</div>
+                <div id="price"></div>
+            </div>
+            <hr>
         </div>
     </div>
 

@@ -30,7 +30,7 @@ generateBtn.addEventListener('click',
         if (userAge == "underage") {
             document.getElementById("discount-info").innerHTML = "Sconto Minorenne";
         } else if (userAge == "over") {
-            document.getElementById("discount-info").innerHTML = "Sconto Over-65";
+            document.getElementById("discount-info").innerHTML = "Sconto Over 65";
         } else {
             document.getElementById("discount-info").innerHTML = "Biglietto Standard";
         }
