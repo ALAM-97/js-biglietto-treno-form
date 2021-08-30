@@ -19,7 +19,7 @@ h1 {
     text-align: center;
     color: #fff; 
 }
-.user-info, .ticket-info {
+.user-info {
     background-color: red;
     margin-top: 50px;
     padding: 20px;
@@ -29,4 +29,15 @@ h1 {
 .buttons {
     margin-top: 50px;
     text-align: center;
+}
+.ticket-info {
+    background-color: red;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    height: 150px;
+    display: none;
+}
+.ticket-info.open {
+    display: block;
 }

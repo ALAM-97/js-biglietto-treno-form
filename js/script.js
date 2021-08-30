@@ -27,6 +27,38 @@ generateBtn.addEventListener('click',
         // ------ stampo le informazioni del biglietto ------
         document.getElementById("pax-name").innerHTML = fullName;
 
+        if (userAge == "underage") {
+            document.getElementById("discount-info").innerHTML = "Sconto Minorenne";
+        } else if (userAge == "over") {
+            document.getElementById("discount-info").innerHTML = "Sconto Over-65";
+        } else {
+            document.getElementById("discount-info").innerHTML = "Biglietto Standard";
+        }
+        
+        var carriageNum = Math.floor(Math.random() * 10) + 1;
+        document.getElementById("carriage").innerHTML = carriageNum;
+
+        function cpCode(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        document.getElementById("cp-code").innerHTML = cpCode(90000, 99999);
+
+        document.getElementById("price").innerHTML = ticketPrice + "€";  
+        
+        // ------ faccio apparire le info del biglietto ------
+        document.getElementById("ticket-print").classList.add("open");
+    }
+)
+
+deleteBtn.addEventListener('click',
+    function() {
+        // ------ creo la funzione per il tasto annulla ------
+        document.getElementById("ticket-print").classList.remove("open");
+        // ------ azzero i campi input e select ------
+        document.getElementById("name").value = "";
+        document.getElementById("km").value = "";
+        document.getElementById("age").value = "";
+
     }
 )
 
