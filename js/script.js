@@ -12,41 +12,39 @@ generateBtn.addEventListener('click',
         var km = parseInt(document.getElementById("km").value);
         var userAge = document.getElementById("age").value;
 
-        // ------ calcolo il prezzo del biglietto ------
-        if (userAge == "underage") {
-            ticketPrice = (km * 0.21 * 0.80);
+        // verifico che l'utente inserisca i dati richiesti
+        if (fullName != "" && !isNaN(km) && km > 0 && userAge != "") {
+
+            // ------ calcolo il prezzo del biglietto ------
+            if (userAge == "underage") {
+                ticketPrice = (km * 0.21 * 0.80);
+                discountType = "Sconto Minorenne";
+            } else if (userAge == "over") {
+                ticketPrice = (km * 0.21 * 0.60);
+                discountType = "Sconto Over 65";
+            } else {
+                ticketPrice = (km * 0.21);
+                discountType = "Biglietto Standard";
+            }
             ticketPrice = ticketPrice.toFixed(2);
-        } else if (userAge == "over") {
-            ticketPrice = (km * 0.21 * 0.60);
-            ticketPrice = ticketPrice.toFixed(2);
+            
+            // ------ stampo le informazioni del biglietto ------
+            document.getElementById("pax-name").innerHTML = fullName;
+
+            document.getElementById("discount-info").innerHTML = discountType;
+            
+            document.getElementById("carriage").innerHTML = Math.floor(Math.random() * 10) + 1;
+
+            document.getElementById("cp-code").innerHTML = Math.floor(Math.random() * (99999 - 90000)) + 90000;
+
+            document.getElementById("price").innerHTML = ticketPrice + "€";  
+            
+            // ------ faccio apparire le info del biglietto ------
+            document.getElementById("ticket-print").classList.add("open");
+       
         } else {
-            ticketPrice = (km * 0.21);
-            ticketPrice = ticketPrice.toFixed(2);
+            alert("Errore! Riempire i campi richiesti!")
         }
-        
-        // ------ stampo le informazioni del biglietto ------
-        document.getElementById("pax-name").innerHTML = fullName;
-
-        if (userAge == "underage") {
-            document.getElementById("discount-info").innerHTML = "Sconto Minorenne";
-        } else if (userAge == "over") {
-            document.getElementById("discount-info").innerHTML = "Sconto Over 65";
-        } else {
-            document.getElementById("discount-info").innerHTML = "Biglietto Standard";
-        }
-        
-        var carriageNum = Math.floor(Math.random() * 10) + 1;
-        document.getElementById("carriage").innerHTML = carriageNum;
-
-        function cpCode(min, max) {
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
-        document.getElementById("cp-code").innerHTML = cpCode(90000, 99999);
-
-        document.getElementById("price").innerHTML = ticketPrice + "€";  
-        
-        // ------ faccio apparire le info del biglietto ------
-        document.getElementById("ticket-print").classList.add("open");
     }
 )
 
@@ -57,7 +55,7 @@ deleteBtn.addEventListener('click',
         // ------ azzero i campi input e select ------
         document.getElementById("name").value = "";
         document.getElementById("km").value = "";
-        document.getElementById("age").value = "";
+        document.getElementById("age").selectedIndex = 0;
 
     }
 )

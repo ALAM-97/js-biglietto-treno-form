@@ -41,6 +41,10 @@ input, select {
     border: 2px solid royalblue;
     font-weight: bold;
     background-color: rgba(65, 105, 225, 0.2);
+    width: 250px;
+}
+select {
+    margin: 15px auto;
 }
 label {
     color: royalblue;
